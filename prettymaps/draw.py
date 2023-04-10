@@ -965,9 +965,6 @@ def plot(
         ax.add_patch(PolygonPatch(
             background, **{k:v for k,v in style["background"].items() if k != 'dilate'}, zorder=zorder))
 
-    # 10. Draw credit message
-    if (mode == "matplotlib") and (credit != False) and (not multiplot):
-        draw_text(credit, background)
 
     # 11. Ajust figure and create PIL Image
     if mode == "matplotlib":
