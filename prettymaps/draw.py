@@ -563,22 +563,7 @@ def draw_text(
         params (Dict[str, dict]): matplotlib style parameters for drawing text. params['text'] should contain the message to be drawn.
         background (BaseGeometry): Background layer
     """
-    # Override default osm_credit dict with provided parameters
-    params = override_params(
-        dict(
-            text="\n".join([
-                "data © OpenStreetMap contributors",
-                "github.com/marceloprates/prettymaps"
-            ]),
-            x=0, y=1,
-            horizontalalignment='left',
-            verticalalignment='top',
-            bbox=dict(boxstyle='square', fc='#fff', ec='#000'),
-            fontfamily='Ubuntu Mono'
-        ),
-        params
-    )
-    x, y, text = [params.pop(k) for k in ['x', 'y', 'text']]
+    # Override default osm_credit dict with provided parameter
 
     # Get background bounds
     xmin, ymin, xmax, ymax = background.bounds
